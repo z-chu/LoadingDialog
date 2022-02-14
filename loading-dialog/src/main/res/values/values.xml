@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--可以通过给外部容器(如：Activity) 的 Theme 设置该属性来达到自定义 xiaoLaLoadingDialog 主题样式-->
+    <attr name="loadingDialogTheme" format="reference" />
+    <!--用于设置 loading message 的 text 样式-->
+    <attr name="loadingDialogMessageTextAppearance" format="reference" />
+    <!--用于设置 loading dialog 的 背景颜色-->
+    <attr name="loadingDialogBackgroundColor" format="color" />
+    <!--用于设置 loading dialog 的 自定义 layout 布局-->
+    <attr name="loadingDialogCustomView" format="reference" />
+    <!--是否开启 loading dialog 的 按正方形比例布局-->
+    <attr name="loadingSquareEnabled" format="boolean" />
+    <!--设置loading dialog 弹出时不关闭软键盘 -->
+    <attr name="loadingFixedKeyboard" format="boolean" />
+
+    <style name="ThemeOverlay.LoadingDialog" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>
+
+        <item name="android:windowBackground">@drawable/loading_dialog_background</item>
+        <!--dialog 的圆角半径-->
+        <item name="dialogCornerRadius">16dp</item>
+        <!--dialog 背景-->
+        <item name="loadingDialogBackgroundColor">#AB000000</item>
+        <!--屏幕横屏时 dialog 最小宽度-->
+        <item name="windowMinWidthMajor">0dp</item>
+        <item name="android:windowMinWidthMajor">0dp</item>
+
+        <!--屏幕竖屏时 dialog 最小宽度-->
+        <item name="windowMinWidthMinor">0dp</item>
+        <item name="android:windowMinWidthMinor">0dp</item>
+
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在 activity 之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!--点击 dialog 外部是否关闭 dialog -->
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <!--loading message 的 text 样式-->
+        <item name="loadingDialogMessageTextAppearance">
+            @style/TextAppearance.LoadingDialog.Message
+        </item>
+        <!--是否是正方形-->
+        <item name="loadingSquareEnabled">true</item>
+        <!--是否弹出时 关闭软键盘-->
+        <item name="loadingFixedKeyboard">false</item>
+    </style>
+
+    <style name="ThemeOverlay.LoadingDialog.SmallDialog">
+        <item name="loadingDialogCustomView">@layout/layout_loading_small_dialog</item>
+        <item name="windowMinWidthMajor">160dp</item>
+        <item name="android:windowMinWidthMajor">160dp</item>
+        <item name="windowMinWidthMinor">160dp</item>
+        <item name="android:windowMinWidthMinor">160dp</item>
+        <!--dialog 的圆角半径-->
+        <item name="dialogCornerRadius">12dp</item>
+        <!--是否是正方形-->
+        <item name="loadingSquareEnabled">false</item>
+        <!--dialog 背景-->
+        <item name="loadingDialogBackgroundColor">#CC000000</item>
+    </style>
+
+
+    <style name="TextAppearance.LoadingDialog.Message" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loading_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.zchu.loadingdialog.widget.SquareLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:square_enabled="?attr/loadingSquareEnabled">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/loading_content_panel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="center"
+                    android:indeterminateDuration="500" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/loading_custom_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_loading_dialog_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textAppearance="?attr/loadingDialogMessageTextAppearance"
+                android:visibility="gone"
+                tools:text="loading斯达阿dd斯达暗示的asdaasdasdasdasdddddd" />
+        </LinearLayout>
+    </com.github.zchu.loadingdialog.widget.SquareLayout>
+
+
+</FrameLayout>
